@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A985DE527B0256D00713F86 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A985DE427B0256D00713F86 /* CardView.swift */; };
 		7AFD277E27B01CED0097C67D /* SwipeTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFD277D27B01CED0097C67D /* SwipeTestApp.swift */; };
 		7AFD278027B01CED0097C67D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFD277F27B01CED0097C67D /* ContentView.swift */; };
 		7AFD278227B01CEE0097C67D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AFD278127B01CEE0097C67D /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7A985DE427B0256D00713F86 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		7AFD277A27B01CED0097C67D /* SwipeTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwipeTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AFD277D27B01CED0097C67D /* SwipeTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTestApp.swift; sourceTree = "<group>"; };
 		7AFD277F27B01CED0097C67D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -35,6 +37,7 @@
 		7AFD277127B01CED0097C67D = {
 			isa = PBXGroup;
 			children = (
+				7AFD278127B01CEE0097C67D /* Assets.xcassets */,
 				7AFD277C27B01CED0097C67D /* SwipeTest */,
 				7AFD277B27B01CED0097C67D /* Products */,
 			);
@@ -53,7 +56,7 @@
 			children = (
 				7AFD277D27B01CED0097C67D /* SwipeTestApp.swift */,
 				7AFD277F27B01CED0097C67D /* ContentView.swift */,
-				7AFD278127B01CEE0097C67D /* Assets.xcassets */,
+				7A985DE427B0256D00713F86 /* CardView.swift */,
 				7AFD278327B01CEE0097C67D /* Preview Content */,
 			);
 			path = SwipeTest;
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AFD278027B01CED0097C67D /* ContentView.swift in Sources */,
+				7A985DE527B0256D00713F86 /* CardView.swift in Sources */,
 				7AFD277E27B01CED0097C67D /* SwipeTestApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

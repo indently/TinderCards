@@ -8,9 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
+    private var people: [String] = ["Mario", "Luigi", "Peach", "Toad", "Reset"]
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+            ZStack {
+                VStack {
+                    ZStack {
+                        ForEach(people, id: \.self) { person in
+                            CardView(person: person)
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
