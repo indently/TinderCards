@@ -20,10 +20,14 @@ struct CardView: View {
                 .cornerRadius(4)
                 .foregroundColor(color.opacity(0.9))
                 .shadow(radius: 4)
-            Text(person)
-                .font(.largeTitle)
-                .foregroundColor(.white)
-                .bold()
+            HStack {
+                Text(person)
+                    .font(.largeTitle)
+                    .foregroundColor(.white)
+                    .bold()
+                Image(systemName: "heart.fill")
+                    .foregroundColor(.red)
+            }
             
         }
         .offset(x: offset.width * 1, y: offset.height * 0.4)
@@ -48,8 +52,10 @@ struct CardView: View {
     func swipeCard(width: CGFloat) {
         switch width {
         case -500...(-150):
+            print("\(person) removed")
             offset = CGSize(width: -500, height: 0)
         case 150...500:
+            print("\(person) added")
             offset = CGSize(width: 500, height: 0)
         default:
             offset = .zero

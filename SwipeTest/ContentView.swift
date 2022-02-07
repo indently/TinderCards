@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    private var people: [String] = ["Mario", "Luigi", "Peach", "Toad", "Reset"].reversed()
+    private var people: [String] = ["Mario", "Luigi", "Peach", "Toad", "Daisy"].reversed()
     
     var body: some View {
         VStack {
