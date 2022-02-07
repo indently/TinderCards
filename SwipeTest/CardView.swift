@@ -27,7 +27,7 @@ struct CardView: View {
             
         }
         .offset(x: offset.width * 1, y: offset.height * 0.4)
-        .rotationEffect(.degrees(Double(offset.width / 60)))
+        .rotationEffect(.degrees(Double(offset.width / 40)))
         .gesture(
             DragGesture()
                 .onChanged { gesture in
@@ -41,7 +41,6 @@ struct CardView: View {
                         swipeCard(width: offset.width)
                         changeColor(width: offset.width)
                     }
-                    
                 }
         )
     }
@@ -59,9 +58,9 @@ struct CardView: View {
     
     func changeColor(width: CGFloat) {
         switch width {
-        case -500...(-100):
+        case -500...(-130):
             color = .red
-        case 100...500:
+        case 130...500:
             color = .green
         default:
             color = .black
