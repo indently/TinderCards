@@ -8,17 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
-    private var people: [String] = ["Mario", "Luigi", "Peach", "Toad", "Reset"]
+    private var people: [String] = ["Mario", "Luigi", "Peach", "Toad", "Reset"].reversed()
     
     var body: some View {
         VStack {
             ZStack {
-                VStack {
-                    ZStack {
-                        ForEach(people, id: \.self) { person in
-                            CardView(person: person)
-                        }
-                    }
+                ForEach(people, id: \.self) { person in
+                    CardView(person: person)
                 }
             }
         }

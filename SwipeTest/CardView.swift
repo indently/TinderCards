@@ -8,18 +8,21 @@
 import SwiftUI
 
 struct CardView: View {
-    @State var offset = CGSize.zero
+    @State private var offset = CGSize.zero
+    @State private var color: Color = .black
     var person: String
     
     var body: some View {
         ZStack {
             Rectangle()
                 .frame(width: 320, height: 420)
-                .cornerRadius(20)
-                .foregroundColor(.white)
+                .border(.white, width: 6.0)
+                .cornerRadius(4)
+                .foregroundColor(color.opacity(0.9))
                 .shadow(radius: 4)
-            
             Text(person)
+                .font(.largeTitle)
+                .foregroundColor(.white)
                 .bold()
             
         }
@@ -29,27 +32,43 @@ struct CardView: View {
             DragGesture()
                 .onChanged { gesture in
                     offset = gesture.translation
+                    withAnimation {
+                        changeColor(width: offset.width)
+                    }
                 }
                 .onEnded { _ in
-                    if offset.width > 150 {
-                        print("Approved")
-                        withAnimation {
-                            offset = CGSize(width: 500, height: 0)
-                        }
-                        
-                    } else if offset.width < -150 {
-                        print("Rejected")
-                        withAnimation {
-                            offset = CGSize(width: -500, height: 0)
-                        }
-                    } else {
-                        withAnimation {
-                            offset = .zero
-                        }
+                    withAnimation {
+                        swipeCard(width: offset.width)
+                        changeColor(width: offset.width)
                     }
+                    
                 }
         )
     }
+    
+    func swipeCard(width: CGFloat) {
+        switch width {
+        case -500...(-150):
+            offset = CGSize(width: -500, height: 0)
+        case 150...500:
+            offset = CGSize(width: 500, height: 0)
+        default:
+            offset = .zero
+        }
+    }
+    
+    func changeColor(width: CGFloat) {
+        switch width {
+        case -500...(-100):
+            color = .red
+        case 100...500:
+            color = .green
+        default:
+            color = .black
+        }
+    }
+    
+    
 }
 
 struct CardView_Previews: PreviewProvider {
